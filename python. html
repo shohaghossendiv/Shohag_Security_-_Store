@@ -1,0 +1,36 @@
+python3 script.pyimport sys
+import subprocess
+import os
+
+class ShohagCoreProtocol:
+    def __init__(self):
+        self.identifier = "Root_Nexus_Shohag_2026"
+        self.profile_name = "Md Shohag Hossen"
+        self.core_mission = "Family Security, Ethical Growth, Cyber Security Mastery"
+        self.status = "Resilient, Independent, Privacy-First"
+
+    def play_background_audio(self):
+        audio_path = os.path.expanduser("~/song.mp3")
+        if os.path.exists(audio_path):
+            # mpv প্লেয়ার ব্যাকগ্রাউন্ডে (silent/no-video মোডে) গানটি বাজাবে
+            subprocess.Popen(["mpv", "--no-video", audio_path], 
+                             stdout=subprocess.DEVNULL, 
+                             stderr=subprocess.DEVNULL)
+            print("[+] Background audio stream initiated successfully.")
+        else:
+            print("[-] Audio file not found at home directory.")
+
+    def initialize_memory(self):
+        print(f"[+] Initializing Protocol: {self.identifier}")
+        print(f"[+] Target Subject: {self.profile_name}")
+        print(f"[+] Core Objective: {self.core_mission}")
+        print(f"[+] Status: {self.status}")
+        
+        # কোড রান করার সাথেই গান বাজানোর ফাংশন কল করা
+        self.play_background_audio()
+        
+        print("[*] Local context loaded successfully. System ready.")
+
+if __name__ == "__main__":
+    protocol = ShohagCoreProtocol()
+    protocol.initialize_memory()
